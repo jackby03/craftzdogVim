@@ -8,13 +8,11 @@ This project is based on the work of Devaslife (Craftzdog), integrating their ne
 ### Pre-requires
 
 You need install 
-- [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim) > 7.2.0  , recommend latest version
+- [Neovim](https://neovim.io/) (>= 0.8)
 - [Tree-sitter](https://github.com/tree-sitter/tree-sitter)
 - [Lua Language Server](https://github.com/sumneko/lua-language-server/wiki)
 
 ## Neovim setup
-
-Requires [Neovim](https://neovim.io/) (>= 0.8)
 
 - [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) - A plugin manager for Neovim
 - [svrana/neosolarized.nvim](https://github.com/svrana/neosolarized.nvim) - A truecolor, solarized dark colorscheme

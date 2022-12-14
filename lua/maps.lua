@@ -1,5 +1,6 @@
-
 local keymap = vim.keymap
+
+vim.g.mapleader = " "
 
 keymap.set('n', 'x', '"_x')
 
@@ -16,14 +17,20 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 
--- tab
+-- Buffer
+
+-- Tab
 keymap.set('n', 'te', ':tabedit')
+keymap.set('n', 'tt', ':tabedit<CR>')
+keymap.set('n', 'tn', ':tabNext<CR>')
+keymap.set('n', 'tp', ':tabprevious<CR>')
 
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+
 -- Move window
-keymap.set('n', '<Space>', '<C-w>w')
+--keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('', '<C-h>', '<C-w>h')
 keymap.set('', '<C-k>', '<C-w>k')
 keymap.set('', '<C-j>', '<C-w>j')
@@ -37,7 +44,8 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Save
 keymap.set('', '<C-s>', ':w!<CR>')
+keymap.set('', '<Leader>s', ':w!<CR>')
 
 -- Quit
 keymap.set('', '<C-q>', ':q!<CR>')
-
+keymap.set('', '<Leader>q', ':q!<CR>')

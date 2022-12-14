@@ -27,19 +27,17 @@ packer.startup(function(use)
   use({
     "L3MON4D3/LuaSnip",
     "hrsh7th/nvim-cmp",
-    requires = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-cmdline",
-      "hrsh7th/cmp-git",
-      "rcarriga/cmp-dap",
-      "saadparwaiz1/cmp_luasnip",
-      "onsails/lspkind-nvim",
-      { "L3MON4D3/LuaSnip", tag = "v1.*" },
-      "windwp/nvim-autopairs",
-    },
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-nvim-lua",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-git",
+    -- "rcarriga/cmp-dap",
+    "saadparwaiz1/cmp_luasnip",
+    -- "onsails/lspkind-nvim",
+    -- { "L3MON4D3/LuaSnip", tag = "v1.*" },
+    "windwp/nvim-autopairs",
   })
 
   use({
@@ -69,12 +67,45 @@ packer.startup(function(use)
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
 
-  --
+  -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
-    'kyazdani42/nvim-tree.lua',
     'kyazdani42/nvim-web-devicons', -- File icons
     'nvim-telescope/telescope-file-browser.nvim',
   }
+  -- file managing , picker etc
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
+
+  -- Alpha Neovim
+  use {
+    'goolord/alpha-nvim',
+    -- config = function()
+    -- require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+    -- require "plugin.alpha"
+    -- end
+  }
+
+  -- Comment
+  use {
+    'numToStr/Comment.nvim',
+    keys = { "gcc" },
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
+  use 'akinsho/nvim-bufferline.lua'
+  -- use 'github/copilot.vim'
+
+  use 'lewis6991/gitsigns.nvim'
+  use 'dinhhuy258/git.nvim' -- For git blame & browse
+  use 'folke/zen-mode.nvim'
+  use 'windwp/nvim-ts-autotag'
 
 end)

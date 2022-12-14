@@ -58,13 +58,13 @@ local options = {
   buttons = {
     type = "group",
     val = {
-      button("sf", "  File Browser to path  ", ""),
-      button(";f", "  File All Browser  ", ""),
-      button(";r", "  Live Grep  ", ""),
-      button("Control s", "  Save File  ", ""),
-      button("Control q", "  Quit File  ", ""),
-      button("Control n", "  Tree Directory  ", ""),
-      button("Control w  o", "  Zen Mode  ", ""),
+      button("tt", "  New File  ", ":tabnew<CR>"),
+      button("sf", "  File Browser to path  ", ":Telescope file_browser<CR>"),
+      button(";f", "  Find Files  ", ":Telescope find_files<CR>"),
+      button("Control s", "  Save File  ", ":w!<CR>"),
+      button("Control q", "  Quit File  ", ":q!<CR>"),
+      button("Control n", "  Tree Directory  ", ":NvimTreeToggle<CR>"),
+      button("Control w  o", "  Zen Mode  ", ":ZenMode<CR>"),
     },
     opts = {
       spacing = 1,

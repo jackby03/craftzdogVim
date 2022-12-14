@@ -1,6 +1,7 @@
 
 ![nvim banner](./img/Neovim.png)
 ![nvim screenshot](https://raw.githubusercontent.com/craftzdog/dotfiles-public/master/images/screenshot-neovim.png)
+![nvim img](./img/img3.png)
 
 # craftzdogVim
 This project is based on the work of Devaslife (Craftzdog), integrating their neovim configuration and improving the user experience. Absolute credits to Craftzdog <3

@@ -58,7 +58,7 @@ local options = {
   buttons = {
     type = "group",
     val = {
-      button("tt", "  New File  ", ":tabnew<CR>"),
+      button("tt", "  New File  ", "<cmd>ene <CR>"),
       button("sf", "  File Browser to path  ", ":Telescope file_browser<CR>"),
       button(";f", "  Find Files  ", ":Telescope find_files<CR>"),
       button("Control s", "  Save File  ", ":w!<CR>"),

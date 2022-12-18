@@ -11,6 +11,7 @@ packer.startup(function(use)
   -- LSP
   use({
     "neovim/nvim-lspconfig",
+    "williamboman/nvim-lsp-installer",
     "hrsh7th/cmp-nvim-lsp-signature-help",
     "jose-elias-alvarez/null-ls.nvim",
     "glepnir/lspsaga.nvim", -- LSP UIs
@@ -33,10 +34,8 @@ packer.startup(function(use)
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-git",
-    -- "rcarriga/cmp-dap",
+    "aca/emmet-ls",
     "saadparwaiz1/cmp_luasnip",
-    -- "onsails/lspkind-nvim",
-    -- { "L3MON4D3/LuaSnip", tag = "v1.*" },
     "windwp/nvim-autopairs",
   })
 
@@ -85,10 +84,6 @@ packer.startup(function(use)
   -- Alpha Neovim
   use {
     'goolord/alpha-nvim',
-    -- config = function()
-    -- require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
-    -- require "plugin.alpha"
-    -- end
   }
 
   -- Comment
@@ -101,7 +96,6 @@ packer.startup(function(use)
   }
 
   use 'akinsho/nvim-bufferline.lua'
-  -- use 'github/copilot.vim'
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse

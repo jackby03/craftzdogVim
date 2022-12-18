@@ -21,7 +21,7 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- Tab
 keymap.set('n', 'te', ':tabedit')
-keymap.set('n', 'tt', ':tabedit<CR>')
+keymap.set('n', 'tt', ':tabnew<CR>')
 keymap.set('n', 'tn', ':tabNext<CR>')
 keymap.set('n', 'tp', ':tabprevious<CR>')
 
@@ -44,8 +44,11 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Save
 keymap.set('', '<C-s>', ':w!<CR>')
-keymap.set('', '<Leader>s', ':w!<CR>')
+keymap.set('', '<Leader>w', ':w!<CR>')
 
 -- Quit
 keymap.set('', '<C-q>', ':q!<CR>')
 keymap.set('', '<Leader>q', ':q!<CR>')
+
+-- visual block
+keymap.set('', '<Leader>v', '<C-v>')

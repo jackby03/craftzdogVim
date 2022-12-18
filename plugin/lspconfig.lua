@@ -65,16 +65,24 @@ protocol.CompletionItemKind = {
 }
 
 -- Set up completion using nvim_cmp with LSP source
---local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-nvim_lsp.flow.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
-
-nvim_lsp.sourcekit.setup {
+nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+}
+
+nvim_lsp.emmet_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "saas", "scss", "less", "blade", "vue" },
+  init_options = {
+    html = {
+      options = {
+        ["bem.enable"] = true,
+      }
+    }
+  }
 }
 
 nvim_lsp.sumneko_lua.setup {

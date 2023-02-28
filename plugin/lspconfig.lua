@@ -90,7 +90,7 @@ nvim_lsp.emmet_ls.setup {
   }
 }
 
-nvim_lsp.sumneko_lua.setup {
+--[[ nvim_lsp.sumneko_lua.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
@@ -110,7 +110,7 @@ nvim_lsp.sumneko_lua.setup {
       },
     },
   },
-}
+} ]]
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {

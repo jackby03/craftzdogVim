@@ -15,9 +15,7 @@ ts.setup {
   ensure_installed = {
     "vim",
     "lua",
-    "tsx",
     "javascript",
-    "vue",
     "html",
     "css",
     "json",

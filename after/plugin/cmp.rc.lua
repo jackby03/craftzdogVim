@@ -23,7 +23,7 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'nvim_lua' },
-    { name = 'cmdline' },
+    -- { name = 'cmdline' },
     { name = 'luasnip' },
   }),
   formatting = {

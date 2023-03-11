@@ -17,8 +17,6 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 -- Save with root permission (not working for now)
 --vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
 
--- Buffer
-
 -- Tab
 keymap.set('n', 'te', ':tabedit')
 keymap.set('n', 'tt', ':tabnew<CR>')
@@ -43,8 +41,8 @@ keymap.set('', '<C-l>', '<C-w>l')
 -- Resize window
 keymap.set('n', '<C-w><left>', '<C-w><')
 keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>+')
-keymap.set('n', '<C-w><down>', '<C-w>-')
+keymap.set('n', '<C-w><down>', '<C-w>+')
+keymap.set('n', '<C-w><up>', '<C-w>-')
 
 -- Save
 keymap.set('', '<C-s>', ':w!<CR>')

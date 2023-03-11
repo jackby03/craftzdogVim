@@ -38,29 +38,29 @@ cmp.setup({
     end, { 'i', 's' }),
   }),
   sources = cmp.config.sources({
-    { name = 'buffer' },
     { name = 'nvim_lsp' },
-    { name = 'path' },
-    { name = 'nvim_lua' },
     { name = 'luasnip' },
+    { name = 'buffer' },
   }),
   formatting = {
     format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
   }
 })
 
-cmp.setup.cmdline("/", {
+cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = { name = "buffer" },
 })
 
-cmp.setup.cmdline(":", {
+cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = "path" },
-    { name = "cmdline" },
-  }),
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
 })
+
 
 vim.cmd [[
   set completeopt=menuone,noinsert,noselect

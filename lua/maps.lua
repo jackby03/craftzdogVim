@@ -24,8 +24,8 @@ keymap.set('n', 'tn', ':tabnext<CR>')
 keymap.set('n', 'tp', ':tabprevious<CR>')
 
 -- Buffer
-keymap.set('n', '[', ':bprevious<CR>')
-keymap.set('n', ']', ':bnext<CR>')
+keymap.set('n', '[', ':bprevious<CR><Space>')
+keymap.set('n', ']', ':bnext<CR><Space>')
 
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
@@ -54,4 +54,3 @@ keymap.set('', '<Leader>q', ':q!<CR>')
 
 -- visual block
 keymap.set('', '<Leader>v', '<C-v>')
-

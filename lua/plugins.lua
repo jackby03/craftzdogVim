@@ -32,7 +32,6 @@ packer.startup(function(use)
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-nvim-lua",
     "hrsh7th/cmp-nvim-lsp",
-    -- "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-git",
     "aca/emmet-ls",
     "saadparwaiz1/cmp_luasnip",
@@ -78,7 +77,7 @@ packer.startup(function(use)
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    tag = 'nightly'                  -- optional, updated every week. (see issue #1193)
   }
 
   -- Alpha Neovim
@@ -101,5 +100,4 @@ packer.startup(function(use)
   use 'dinhhuy258/git.nvim' -- For git blame & browse
   use 'folke/zen-mode.nvim'
   use 'windwp/nvim-ts-autotag'
-
 end)

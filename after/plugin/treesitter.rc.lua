@@ -16,6 +16,7 @@ ts.setup {
     "vim",
     "lua",
     "javascript",
+    "typescript",
     "html",
     "css",
     "json",

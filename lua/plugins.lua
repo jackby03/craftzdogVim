@@ -101,4 +101,12 @@ packer.startup(function(use)
   use 'dinhhuy258/git.nvim' -- For git blame & browse
   use 'folke/zen-mode.nvim'
   use 'windwp/nvim-ts-autotag'
+
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2',
+    config = function()
+      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
 end)

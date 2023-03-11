@@ -29,11 +29,10 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
   vim.keymap.set('n', '<Leader>j', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-  vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-  vim.keymap.set('i', '<C-z>', '<Cmd>Lspsaga signature_help<CR>', opts)
-  -- vim.keymap.set('i', '<C-l>', vim.lsp.buf.signature_help, opts)
+  -- vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>l', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
-  vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 end
 
 protocol.CompletionItemKind = {
@@ -108,11 +107,9 @@ nvim_lsp.lua_ls.setup {
   settings = {
     Lua = {
       diagnostics = {
-        -- Get the language server to recognize the `vim` global
         globals = { 'vim' },
       },
       workspace = {
-        -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
         checkThirdParty = false
       },

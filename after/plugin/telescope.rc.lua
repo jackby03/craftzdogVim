@@ -76,3 +76,6 @@ vim.keymap.set("n", "sf", function()
     layout_config = { height = 40 }
   })
 end)
+vim.keymap.set('n', ';k',function() 
+  builtin.keymaps()
+end)

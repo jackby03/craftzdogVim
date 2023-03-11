@@ -22,8 +22,12 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 -- Tab
 keymap.set('n', 'te', ':tabedit')
 keymap.set('n', 'tt', ':tabnew<CR>')
-keymap.set('n', 'tn', ':tabNext<CR>')
+keymap.set('n', 'tn', ':tabnext<CR>')
 keymap.set('n', 'tp', ':tabprevious<CR>')
+
+-- Buffer
+keymap.set('n', '[', ':bprevious<CR>')
+keymap.set('n', ']', ':bnext<CR>')
 
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')

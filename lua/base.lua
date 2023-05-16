@@ -28,6 +28,17 @@ vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' }
 vim.opt.wildignore:append { '*/node_modules/*' }
 
+function ToogleWrap()
+  if vim.o.wrap then
+    vim.o.wrap = false
+    print("Wrap disabled")
+  else
+    vim.o.wrap = true
+    print("Wrap enable")
+  end
+end
+
+vim.cmd("command! -nargs=0 ToogleWrap lua ToogleWrap()")
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])

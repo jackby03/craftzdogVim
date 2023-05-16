@@ -40,7 +40,10 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'path' },
     { name = 'buffer' },
+    { name = 'cmp_tabnine' },
+    -- { name = 'copilot' },
   }),
   formatting = {
     format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
@@ -49,14 +52,17 @@ cmp.setup({
 
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
-  sources = { name = "buffer" },
+  sources = {
+    -- { name = "copilot" },
+    { name = "buffer" }
+  },
 })
 
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
+    { name = 'path' },
+    -- { name = 'copilot' },
     { name = 'cmdline' }
   })
 })

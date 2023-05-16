@@ -1,6 +1,8 @@
 local status, packer = pcall(require, "packer")
 if (not status) then return end
 
+local win = vim.fn.has("win32") == 1
+
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
@@ -38,6 +40,21 @@ packer.startup(function(use)
     "saadparwaiz1/cmp_luasnip",
     "windwp/nvim-autopairs",
   })
+
+  if win then
+    use {
+      'tzachar/cmp-tabnine',
+      after = "nvim-cmp",
+      run = 'powershell ./install.ps1',
+      requires = 'hrsh7th/nvim-cmp'
+    }
+  else
+    use {
+      'tzachar/cmp-tabnine',
+      run = './install.sh',
+      requires = 'hrsh7th/nvim-cmp'
+    }
+  end
 
   use({
     "ThePrimeagen/refactoring.nvim",

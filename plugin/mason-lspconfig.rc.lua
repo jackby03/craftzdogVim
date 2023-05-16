@@ -10,6 +10,7 @@ require('mason-tool-installer').setup {
   ensure_installed = {
     "prettierd",
     "eslint_d",
+    "diagnostic-languageserver",
     "json-lsp",
     "lua-language-server",
     "stylua",

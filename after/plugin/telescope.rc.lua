@@ -29,8 +29,9 @@ telescope.setup {
         },
         ["n"] = {
           -- your custom normal mode mappings
-          ["N"] = fb_actions.create,
+          ["a"] = fb_actions.create,
           ["h"] = fb_actions.goto_parent_dir,
+          ["d"] = fb_actions.remove,
           ["/"] = function()
             vim.cmd('startinsert')
           end
@@ -41,30 +42,24 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
+telescope.load_extension("flutter")
 
-vim.keymap.set('n', ';f',
+local keymap_set = vim.keymap.set
+
+keymap_set('n', ';f',
   function()
     builtin.find_files({
       no_ignore = false,
       hidden = true
     })
   end)
-vim.keymap.set('n', ';r', function()
-  builtin.live_grep()
-end)
-vim.keymap.set('n', '\\\\', function()
-  builtin.buffers()
-end)
-vim.keymap.set('n', ';t', function()
-  builtin.help_tags()
-end)
-vim.keymap.set('n', ';;', function()
-  builtin.resume()
-end)
-vim.keymap.set('n', ';e', function()
-  builtin.diagnostics()
-end)
-vim.keymap.set("n", "sf", function()
+keymap_set('n', ';l', ':Telescope<CR>')
+keymap_set('n', ';r', function() builtin.live_grep() end)
+keymap_set('n', '\\\\', function() builtin.buffers() end)
+keymap_set('n', ';t', function() builtin.help_tags() end)
+keymap_set('n', ';;', function() builtin.resume() end)
+keymap_set('n', ';e', function() builtin.diagnostics() end)
+keymap_set("n", "sf", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
     cwd = telescope_buffer_dir(),
@@ -76,6 +71,6 @@ vim.keymap.set("n", "sf", function()
     layout_config = { height = 40 }
   })
 end)
-vim.keymap.set('n', ';k',function() 
+keymap_set('n', ';k', function()
   builtin.keymaps()
 end)

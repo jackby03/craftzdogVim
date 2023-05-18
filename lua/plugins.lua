@@ -110,6 +110,15 @@ packer.startup(function(use)
     'goolord/alpha-nvim',
   }
 
+  -- Flutter
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',
+    },
+  }
+
   -- Comment
   use {
     'numToStr/Comment.nvim',

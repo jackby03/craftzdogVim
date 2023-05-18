@@ -12,6 +12,7 @@ You need install
 - [Neovim](https://neovim.io/) (>= 0.8)
 - [Tree-sitter](https://github.com/tree-sitter/tree-sitter)
 - [Lua Language Server](https://github.com/sumneko/lua-language-server/wiki)
+- [Flow](https://flow.org/en/docs/install/)
 
 ## Neovim setup
 

@@ -7,12 +7,16 @@ require('highlights')
 require('maps')
 -- require('plugins')
 
+-- idetifier os
 local has = function(x)
   return vim.fn.has(x) == 1
 end
 
+-- mac os
 local is_mac = has "macunix"
+-- windows
 local is_win = has "win32"
+-- linux
 local is_linux = has "linux"
 
 if is_mac then

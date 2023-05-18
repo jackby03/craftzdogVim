@@ -2,7 +2,8 @@ local M = {}
 
 vim.opt.clipboard:append { 'unnamedplus' }
 
-EXECUTION_STATUS = 1
+local EXECUTION_STATUS = 1
+-- local install_path = vim.fn.stdpath('data') .. "/site/pack/packer/start/packer.nvim"
 local install_path = vim.fn.stdpath('data') .. " $env:LOCALAPPDATA\\nvim-data\\site\\pack\\packer\\start\\packer.nvim"
 local fn = vim.fn
 local installed_dependencies = function(str)
@@ -25,7 +26,7 @@ local ensure_packer = function()
     installed_dependencies('emmet-ls')
     installed_dependencies('@tailwindcss/language-server')
     installed_dependencies('flow-bin')
-    M.echo("  Installing dependencies via npm, wait please 🙏")
+    M.echo("  Installing dependencies via npm, please wait 🙏")
     return true
   end
   return false
@@ -37,10 +38,10 @@ require('plugins')
 
 M.echo("Welcome 🥳 gamer friend 🕹️")
 
-if execution_status == 1 then
+if EXECUTION_STATUS == 1 then
   if packer_bootstrap then
     require('packer').sync()
-    EXECUTION_STATUS = execution_status - 1
+    EXECUTION_STATUS = EXECUTION_STATUS - 1
   end
 end
 

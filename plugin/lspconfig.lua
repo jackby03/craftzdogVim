@@ -56,6 +56,18 @@ protocol.CompletionItemKind = {
 }
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local ts_utils = require('nvim-lsp-ts-utils')
+
+nvim_lsp.denols.setup {
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = true
+    ts_utils.setup {
+      enable_formatting = true,
+      enable_import_on_completion = true,
+    }
+  end,
+  capabilities = capabilities
+}
 
 nvim_lsp.flow.setup {
   on_attach = on_attach,

@@ -1,15 +1,29 @@
-vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
+local M = {}
 
-local packer_path = vim.fn.stdpath('data') .. " $env:LOCALAPPDATA\\nvim-data\\site\\pack\\packer\\start\\packer.nvim"
+vim.opt.clipboard:append { 'unnamedplus' }
 
-if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
-  require('plugins')
-else
-  vim.cmd(
-    '!git clone https://github.com/wbthomas/packer.nvim ' .. packer_path)
-  print("Packer Installed")
-  require('plugins')
-  print("Loaded Plugins")
-  vim.cmd("autocmd VimEnter * PackerSync")
-  print("Downloading Packages")
+M.echo = function(str)
+  vim.cmd "redraw"
+  vim.api.nvim_echo({ { str, "Bold" } }, true, {})
+end
+
+
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = vim.fn.stdpath('data') .. " $env:LOCALAPPDATA\\nvim-data\\site\\pack\\packer\\start\\packer.nvim"
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    vim.cmd [[packadd packer.nvim]]
+    M.echo "  Installing lazy.nvim & plugins ..."
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
+require('plugins')
+
+if packer_bootstrap then
+  require('packer').sync()
 end

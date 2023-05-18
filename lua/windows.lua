@@ -3,8 +3,8 @@ local M = {}
 vim.opt.clipboard:append { 'unnamedplus' }
 
 local EXECUTION_STATUS = 1
--- local install_path = vim.fn.stdpath('data') .. "/site/pack/packer/start/packer.nvim"
-local install_path = vim.fn.stdpath('data') .. " $env:LOCALAPPDATA\\nvim-data\\site\\pack\\packer\\start\\packer.nvim"
+local install_path = vim.fn.stdpath('data') .. "/site/pack/packer/start/packer.nvim"
+-- local install_path = vim.fn.stdpath('data') .. " $env:LOCALAPPDATA\\nvim-data\\site\\pack\\packer\\start\\packer.nvim"
 local fn = vim.fn
 local installed_dependencies = function(str)
   if fn.executable(str) == 0 then

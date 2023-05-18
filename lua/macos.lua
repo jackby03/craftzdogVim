@@ -2,7 +2,7 @@ local M = {}
 
 vim.opt.clipboard:append { 'unnamedplus' }
 
-execution_status = 1
+local EXECUTION_STATUS = 1
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local fn = vim.fn
@@ -41,7 +41,7 @@ M.echo("Welcome 🥳 aesthetic friend 🌟")
 if execution_status == 1 then
   if packer_bootstrap then
     require('packer').sync()
-    execution_status = execution_status - 1
+    EXECUTION_STATUS = EXECUTION_STATUS - 1
   end
 end
 

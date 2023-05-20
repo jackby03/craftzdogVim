@@ -6,7 +6,6 @@ local EXECUTION_STATUS = 1
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
-require('dependencies')
 
 M.echo = function(str)
   vim.cmd("redraw")
@@ -18,6 +17,7 @@ local ensure_packer = function()
     fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd("packadd packer.nvim")
     M.echo("  Installing Packer.nvim & plugins 💁...")
+    require('dependencies')
     return true
   end
   return false

@@ -27,7 +27,7 @@ local packer_bootstrap = ensure_packer()
 
 require('plugins')
 
-M.echo("Welcome 🥳 aesthetic friend 🌟")
+M.echo("Welcome 🥳 friendly penguin 🐧")
 
 if EXECUTION_STATUS == 1 then
   if packer_bootstrap then

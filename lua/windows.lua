@@ -7,6 +7,7 @@ local install_path = vim.fn.stdpath('data') .. "/site/pack/packer/start/packer.n
 -- local install_path = vim.fn.stdpath('data') .. " $env:LOCALAPPDATA\\nvim-data\\site\\pack\\packer\\start\\packer.nvim"
 local fn = vim.fn
 
+
 M.echo = function(str)
   vim.cmd("redraw")
   vim.api.nvim_echo({ { str, "Bold" } }, true, {})
@@ -17,6 +18,7 @@ local ensure_packer = function()
     fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd("packadd packer.nvim")
     M.echo("  Installing Packer.nvim & plugins 💁...")
+    require('dependencies')
     return true
   end
   return false

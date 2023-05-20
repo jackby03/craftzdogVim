@@ -6,11 +6,6 @@ local EXECUTION_STATUS = 1
 local install_path = vim.fn.stdpath('data') .. "/site/pack/packer/start/packer.nvim"
 -- local install_path = vim.fn.stdpath('data') .. " $env:LOCALAPPDATA\\nvim-data\\site\\pack\\packer\\start\\packer.nvim"
 local fn = vim.fn
-local installed_dependencies = function(str)
-  if fn.executable(str) == 0 then
-    fn.system({ 'npm', 'install', '-g', str })
-  end
-end
 
 M.echo = function(str)
   vim.cmd("redraw")
@@ -22,11 +17,6 @@ local ensure_packer = function()
     fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd("packadd packer.nvim")
     M.echo("  Installing Packer.nvim & plugins 💁...")
-    installed_dependencies('typescript-language-server')
-    installed_dependencies('emmet-ls')
-    installed_dependencies('@tailwindcss/language-server')
-    installed_dependencies('flow-bin')
-    M.echo("  Installing dependencies via npm, please wait 🙏")
     return true
   end
   return false

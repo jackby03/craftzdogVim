@@ -1,6 +1,16 @@
 M = {}
 
 local fn = vim.fn
+
+local compilers_installed = function(str)
+  if fn.executable(str) == 0 then
+    M.echo("Need to install  ", str, " 🙏")
+  end
+end
+
+compilers_installed('gcc')
+compilers_installed('node')
+
 local installed_dependencies = function(str)
   if fn.executable(str) == 0 then
     fn.system({ 'npm', 'install', '-g', str })

@@ -19,6 +19,7 @@ local ensure_packer = function()
     vim.cmd("packadd packer.nvim")
     M.echo("  Installing Packer.nvim & plugins 💁...")
     require('dependencies')
+    require('packer').sync()
     return true
   end
   return false

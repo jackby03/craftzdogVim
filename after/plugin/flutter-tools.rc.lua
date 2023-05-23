@@ -16,7 +16,7 @@ flutter_tools.setup {
   },
   closing_tags = {
     -- highlight = "ErrorMsg",
-    prefix = "///",
+    prefix = "<=",
     enable = true
   },
   dev_log = {

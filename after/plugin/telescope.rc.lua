@@ -42,7 +42,6 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
-telescope.load_extension("flutter")
 
 local keymap_set = vim.keymap.set
 

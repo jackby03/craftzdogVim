@@ -6,7 +6,7 @@ local EXECUTION_STATUS = 1
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
-require('dependencies')
+require('dependencies_linux')
 
 M.echo = function(str)
   vim.cmd("redraw")

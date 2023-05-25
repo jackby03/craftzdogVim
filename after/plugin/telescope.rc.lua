@@ -43,6 +43,11 @@ telescope.setup {
 
 telescope.load_extension("file_browser")
 
+local flutter_tools = pcall(require, "flutter-tools")
+if flutter_tools then
+  telescope.load_extension("flutter")
+end
+
 local keymap_set = vim.keymap.set
 
 keymap_set('n', ';f',

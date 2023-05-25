@@ -1,5 +1,12 @@
 M = {}
 
+
+M.echo = function(str)
+  vim.cmd("redraw")
+  vim.api.nvim_echo({ { str, "Bold" } }, true, {})
+end
+
+
 local fn = vim.fn
 
 local compilers_installed = function(str)

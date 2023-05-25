@@ -1,5 +1,7 @@
 local status, flutter_tools = pcall(require, "flutter-tools")
 if not status then return end
+local st, telescope = pcall(require, "telescope")
+if (not st) then return end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local on_attach = function(client, bufnr)
@@ -52,3 +54,6 @@ flutter_tools.setup {
 
 local keymap_set = vim.keymap.set
 keymap_set('n', 'ff', ':Telescope flutter commands<CR>')
+
+
+telescope.load_extension("flutter")

@@ -16,7 +16,7 @@ flutter_tools.setup {
   },
   closing_tags = {
     -- highlight = "ErrorMsg",
-    prefix = "///",
+    prefix = "<=",
     enable = true
   },
   dev_log = {
@@ -52,3 +52,4 @@ flutter_tools.setup {
 
 local keymap_set = vim.keymap.set
 keymap_set('n', 'ff', ':Telescope flutter commands<CR>')
+

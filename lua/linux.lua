@@ -18,6 +18,7 @@ local ensure_packer = function()
     fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd("packadd packer.nvim")
     M.echo("  Installing Packer.nvim & plugins 💁...")
+    require('packer').sync()
     return true
   end
   return false
